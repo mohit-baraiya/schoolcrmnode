@@ -1,5 +1,7 @@
 const { sign } = require("jsonwebtoken");
 const adminModel = require("../models/adminModel");
+const facultyModel = require("../models/facultyModel");
+const studentModel = require("../models/studentModel");
 
 module.exports = {
   async adminLogin(req, res) {
@@ -45,4 +47,20 @@ module.exports = {
       console.log(error);
     }
   },
+  async allFaculty(req, res) {
+    let response = { message: '' }
+    response = {
+      message: 'data fetched',
+      faculties: await facultyModel.find({})
+    }
+    res.send(response)
+  },
+  async allStudents(req, res) {
+    let response = { message: '' }
+    response = {
+      message: 'data fetched',
+      faculties: await studentModel.find({})
+    }
+    res.send(response)
+  }
 };
