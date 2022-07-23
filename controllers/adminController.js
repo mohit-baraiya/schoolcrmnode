@@ -13,6 +13,7 @@ module.exports = {
       if (findAdmin) {
         if (findAdmin.password === formData.password) {
           let token = sign({ id: findAdmin.id, username: findAdmin.username, email: findAdmin.email }, 'm13')
+          response = { token, message: "admin logged in" }
         } else {
           response.message = "your password is wrong"
         }
