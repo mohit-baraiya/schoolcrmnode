@@ -4,4 +4,6 @@ const facultyController = require("../controllers/facultyController");
 const passport = require("passport");
 const router = Router()
 router.post('/', passport.authenticate('jwt'), facultyController.createFaculty);
+router.post('/login', facultyController.loginFaculty);
+router.get('/student', facultyController.viewStudent)
 module.exports = router

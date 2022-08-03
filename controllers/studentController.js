@@ -12,5 +12,9 @@ module.exports = {
             response.messsage = 'email of student exist'
         }
         res.send(response)
+    },
+    async updateStudent(req, res) {
+        let studentId = req.params;
+        let student
     }
 }
